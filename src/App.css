@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.input-text {
+  height: 35px;
+  margin: 50px;
+  border-radius: 20%;
+}
+
+.temp {
+}
+
+.temp-description {
+  display: flex;
+  background-color: gray;
+  justify-content: space-evenly;
+  opacity: 0.5;
+  width: 100%;
+  position: absolute;
+  bottom: 180px;
+}
