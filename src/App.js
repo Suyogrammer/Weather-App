@@ -8,6 +8,7 @@ function App() {
   const [data, setData] = useState({});
   const [city, setCity] = useState("");
   const [weatherData, setweatherData] = useState("");
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -35,12 +36,12 @@ function App() {
           `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=93eee144b7450e33ce666ddbb913584a`
         )
         .then((response) => {
-          console.log(response);
+          console.log(response.data.list);
           // console.log(response.list);
-          setweatherData(response.list);
+          setweatherData(response.data.list);
         });
     }
-  }, [latitude, longitude]);
+  }, [latitude, longitude, data]);
 
   const searchCity = (event) => {
     if (event.key === "Enter") {
@@ -52,7 +53,6 @@ function App() {
         .then((response) => {
           console.log(response);
           setData(response.data);
-          setweatherData(response.list);
         });
       // });
       setCity("");
@@ -66,8 +66,7 @@ function App() {
 
   return (
     <div className="App">
-      <div>{weatherData}</div>
-      <h1>Weather App</h1>
+      <h1 className="heading">Weather App</h1>
       <input
         className="input-text"
         type="text"

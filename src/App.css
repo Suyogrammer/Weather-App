@@ -37,13 +37,19 @@
   }
 }
 
+.heading {
+  color: rgb(140, 120, 230);
+}
+
 .input-text {
   height: 35px;
   margin: 50px;
   border-radius: 20%;
 }
 
-.temp {
+.city-name {
+  color: rgb(140, 120, 230);
+  font-size: 40px;
 }
 
 .temp-description {
